@@ -1,5 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
+import argparse
 from timezonefinder import TimezoneFinder
+from termcolor import colored
 
 # object creation
 obj = TimezoneFinder()
@@ -11,3 +15,23 @@ obj = TimezoneFinder()
 def timzone(lat=25.6093239, lng = 85.1235252):
     time_zone = obj.timezone_at(lng=lng, lat=lat)
     return f"The time zone at lat: {lat} and lng: {lng} is {time_zone}"
+
+if __name__ == '__main__':
+    description = 'To calculate the distance between 2 coordinates.'
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument('--coords',
+                        nargs='+',
+                        help='list of coordinates',
+                        required=False)
+    parser.add_argument('--prod',
+                        action='store_true',
+                        default=False,
+                        help='Example here')
+    args = parser.parse_args()
+    lat, lng = args.coords
+    dist = timzone(float(lat), float(lng))
+    print(colored("###### Distance ######", "blue"))
+    print(colored(dist, "red"))
+
+
+
