@@ -13,5 +13,6 @@ setup(name='PackageAfterMlpackage',
       test_suite='tests',
       # include_package_data: to install data from MANIFEST.in
       include_package_data=True,
-      scripts=['scripts/PackageAfterMlpackage-run'],
+      scripts=['scripts/PackageAfterMlpackage-run',
+                'scripts/time_zone'],
       zip_safe=False)
