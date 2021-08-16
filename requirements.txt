@@ -7,10 +7,8 @@ wheel>=0.29
 # data science
 numpy
 pandas
-scikit-learn
-timezonefinder
-sys
-requests
+#scikit-learn
+timezonefinder==5.2.0
 
 # tests/linter
 black
