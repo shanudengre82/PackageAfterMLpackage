@@ -1,1 +1,1 @@
-web: pip install . -U && PackageAfterMlpackage-run
+web: pip install . -U && time_zone-run
